@@ -1,6 +1,8 @@
 package com.taewon.mygallag;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -34,6 +36,8 @@ public class ResultActivity extends AppCompatActivity {
     //결과화면에서 뒤로가기 버튼 사용 막음
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
+        ExitDialog exitDialog = new ExitDialog(this);
+
+        exitDialog.show();
     }
 }

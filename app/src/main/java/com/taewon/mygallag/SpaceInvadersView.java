@@ -1,6 +1,7 @@
 package com.taewon.mygallag;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -34,7 +35,7 @@ public class SpaceInvadersView extends SurfaceView implements Runnable, SurfaceH
     private ArrayList sprites = new ArrayList();
     private Sprite starship;
     private int score, currEnemyCount;
-    private Thread gameThread = null;
+    private Thread gameThread;
     private volatile  boolean running;
     private Canvas canvas;
     int mapBitmapY = 0;
@@ -64,8 +65,11 @@ public class SpaceInvadersView extends SurfaceView implements Runnable, SurfaceH
         Intent intent = new Intent(context, ResultActivity.class);
         intent.putExtra("score", score);
         context.startActivity(intent);
-        gameThread.stop();
+        //gameThread.stop();
+        ((Activity) context).finish();
     }
+
+
 
     public void removeSprite(Sprite sprite) { sprites.remove(sprite); } //스프라이트 제거위한 메서드
 
@@ -182,6 +186,7 @@ public class SpaceInvadersView extends SurfaceView implements Runnable, SurfaceH
     public void surfaceDestroyed(@NonNull SurfaceHolder surfaceHolder) {
 
     }
+
 
 
 

@@ -88,4 +88,11 @@ public class StartActivity extends AppCompatActivity {
             mediaPlayer = null;
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        ExitDialog exitDialog = new ExitDialog(this);
+
+        exitDialog.show();
+    }
 }

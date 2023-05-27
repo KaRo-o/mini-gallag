@@ -121,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
         spaceInvadersView.resume(); // 게임 재개
     }
 
+
+
     @Override
     protected void onPause() { // 액티비티 일시 정지
         super.onPause();
